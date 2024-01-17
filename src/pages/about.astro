@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../Components/Header.astro';
+import Footer from '../Components/footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -41,7 +42,7 @@ const skillColor  = "navy";
 	</head>
 	<body>
 		<!-- links -->
-		<Navigation />
+		<Header />
 		<h1>{pageTitle}</h1>
 		<h2>This is actually not about me, but more about working of a Astro site.</h2>
 		<p>I am just following through a basic Astro blog cration & deployment tutorial to see how good is the experience.</p>
@@ -64,5 +65,8 @@ const skillColor  = "navy";
 		{finished && <p>I finished this tutorial!</p>}
 
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+
+		<Footer />
 	</body>
 </html>

@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../Components/Header.astro';
+import Footer from '../Components/footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "My Astro Learning Blog";
@@ -20,7 +21,7 @@ let today = new Date().toDateString();
 		</style>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 		<h1>{pageTitle}</h1>
 		<h2>This is where blog articles will be published.</h2>
 		<!-- links to blog posts -->
@@ -30,5 +31,7 @@ let today = new Date().toDateString();
 			<li><a href="/posts/post-3/">Post 3</a></li>
 		</ul>
 		<h3>Today is {today}.</h3>
+
+		<Footer />
 	</body>
 </html>
