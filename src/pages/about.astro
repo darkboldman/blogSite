@@ -1,8 +1,5 @@
 ---
-import Header from '../Components/Header.astro';
-import Footer from '../Components/footer.astro';
-import '../styles/global.css';
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 
 const identity = {
@@ -19,33 +16,25 @@ const finished = false;
 const goal = 3;
 
 const skillColor  = "navy";
+
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars= {{skillColor}}>
-			h1{
-				color: plum;
-				font-size: 3rem;
-			}
-			.skill {
-				color: var(--skillColor);
-				font-weight: bold;
-			}
+<BaseLayout pageTitle = {pageTitle}>
+	
+	<style define:vars= {{skillColor}}>
+		h1{
+			color: plum;
+			font-size: 3rem;
+		}
+		.skill {
+			color: var(--skillColor);
+			font-weight: bold;
+		}
 
-		</style>
-	</head>
-	<body>
-		<!-- links -->
-		<Header />
-		<h1>{pageTitle}</h1>
+	</style>
 		<h2>This is actually not about me, but more about working of a Astro site.</h2>
-		<p>I am just following through a basic Astro blog cration & deployment tutorial to see how good is the experience.</p>
+		<p>I am just following through a basic Astro blog creation & deployment tutorial to see how good is the experience.</p>
 		<p>This site will deployed to netlify via github..Amazing!</p>
 
 		<p>Here are a few facts about me:</p>
@@ -65,8 +54,6 @@ const skillColor  = "navy";
 		{finished && <p>I finished this tutorial!</p>}
 
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+</BaseLayout>
 
-
-		<Footer />
-	</body>
-</html>
+	
